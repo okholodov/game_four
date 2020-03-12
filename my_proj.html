@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Connect four</title>
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="my_proj.css">
+
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 align="center">Welcome to Connect Four</h1>
+      <h3 align="center">The object of this game is to connect four if your chips in a row!</h3>
+      <div class="text-center">
+        <button id="btnstart" type="button" class="btn btn-primary">Start</button>
+      </div>
+      <h4 align="center">Press Start to start a new game.</h4>
+
+      <h4 id="turn" align="center">.</h4>
+
+      <table align="center" class="1table">
+        <!-- <thead>
+          <tr>
+            <th style="width: 80px"></th>
+            <th style="width: 80px"></th>
+            <th style="width: 80px"></th>
+            <th style="width: 80px"></th>
+            <th style="width: 80px"></th>
+            <th style="width: 80px"></th>
+            <th style="width: 80px"></th>
+          </tr>
+        </thead> -->
+        <tr id="row1">
+          <td id="row1col1" class="col1 make_grey"></td>
+          <td id="row1col2" class="col2 make_grey"></td>
+          <td id="row1col3" class="col3 make_grey"></td>
+          <td id="row1col4" class="col4 make_grey"></td>
+          <td id="row1col5" class="col5 make_grey"></td>
+          <td id="row1col6" class="col6 make_grey"></td>
+          <td id="row1col7" class="col7 make_grey"></td>
+        </tr>
+        <tr id="row2">
+          <td id="row2col1" class="col1 make_grey"></td>
+          <td id="row2col2" class="col2 make_grey"></td>
+          <td id="row2col3" class="col3 make_grey"></td>
+          <td id="row2col4" class="col4 make_grey"></td>
+          <td id="row2col5" class="col5 make_grey"></td>
+          <td id="row2col6" class="col6 make_grey"></td>
+          <td id="row2col7" class="col7 make_grey"></td>
+        </tr>
+        <tr id="row3">
+          <td id="row3col1" class="col1 make_grey"></td>
+          <td id="row3col2" class="col2 make_grey"></td>
+          <td id="row3col3" class="col3 make_grey"></td>
+          <td id="row3col4" class="col4 make_grey"></td>
+          <td id="row3col5" class="col5 make_grey"></td>
+          <td id="row3col6" class="col6 make_grey"></td>
+          <td id="row3col7" class="col7 make_grey"></td>
+        </tr>
+        <tr id="row4">
+          <td id="row4col1" class="col1 make_grey"></td>
+          <td id="row4col2" class="col2 make_grey"></td>
+          <td id="row4col3" class="col3 make_grey"></td>
+          <td id="row4col4" class="col4 make_grey"></td>
+          <td id="row4col5" class="col5 make_grey"></td>
+          <td id="row4col6" class="col6 make_grey"></td>
+          <td id="row4col7" class="col7 make_grey"></td>
+        </tr>
+        <tr id="row5">
+          <td id="row5col1" class="col1 make_grey"></td>
+          <td id="row5col2" class="col2 make_grey"></td>
+          <td id="row5col3" class="col3 make_grey"></td>
+          <td id="row5col4" class="col4 make_grey"></td>
+          <td id="row5col5" class="col5 make_grey"></td>
+          <td id="row5col6" class="col6 make_grey"></td>
+          <td id="row5col7" class="col7 make_grey"></td>
+        </tr>
+      </table>
+
+    </div>
+
+    <script type="text/javascript" src="my_proj.js"></script>
+  </body>
+</html>
