@@ -4,16 +4,24 @@ console.log('Js connected!');
 var turn = 1;
 var turnH = $('#turn');
 var gameOn = false;
+var numRows = 6
+var numCols = 7
 
 function checkWin() {
-  for (var i=5; i>0; i--) {
+   if (checkHorizontal() || checkVertical()) {
+     gameOn = false;
+   }
+
+}
+
+function checkHorizontal() {
+  for (var i=numRows; i>0; i--) {
     var tds = $('#row' + i + ' td');
     if (isdebug) {
       console.log("****** Checking row " + i);
     }
-    //for (var td of tds) {
     // Checking only first 4 cells in each row
-    for (var j = 0; j<4; j++) {
+    for (var j = 0; j<=numCols-4; j++) {
       var current = $(tds[j]).attr('class').split(" ")[1];
       if (isdebug) {
         console.log("current cell class:" + current);
@@ -27,27 +35,55 @@ function checkWin() {
           current === $(tds[j+3]).attr('class').split(" ")[1]
         ) {
           if (current === 'make_blue') {
-            turnH.text('Player A is won!');
-            gameOn = false;
-            break;
+            turnH.text('Player A is won (horizontal)!');
+            return true;
           } else if (current === 'make_red') {
-            turnH.text('Player B is won!');
-            gameOn = false;
-            break;
+            turnH.text('Player B is won (horizontal)!');
+            return true;
           }
         }
-
-      // if (isdebug) {
-      //   console.log('td('+i+') = ' + $(td).attr('class')[1]);
-      // }
-    }
-
-    if (!gameOn) {
-      break;
     }
   }
 
-  return false;
+}
+
+function checkVertical() {
+
+  // Take all columns
+  for (var i=1; i<numCols; i++) {
+    var cols = $('.col' + i);
+    if (isdebug) {
+      console.log("****** VERTICAL Checking column " + i);
+    }
+
+    for (var j = numRows-1; j>numRows-4; j--) {
+      var current = $(cols[j]).attr('class').split(" ")[1];
+      if (isdebug) {
+        console.log("current cell class:" + current);
+        console.log("j-1 cell class:" + $(cols[j-1]).attr('class').split(" ")[1]);
+        console.log("j-2 cell class:" + $(cols[j-2]).attr('class').split(" ")[1]);
+        console.log("j-3 cell class:" + $(cols[j-3]).attr('class').split(" ")[1]);
+      }
+
+      if (current !== 'make_grey' &&
+          current === $(cols[j-1]).attr('class').split(" ")[1] &&
+          current === $(cols[j-2]).attr('class').split(" ")[1] &&
+          current === $(cols[j-3]).attr('class').split(" ")[1]
+        ) {
+          if (current === 'make_blue') {
+            turnH.text('Player A is won (vertical)!');
+            return true;
+          } else if (current === 'make_red') {
+            turnH.text('Player B is won (vertical)!');
+            return true;
+          }
+        }
+    }
+  }
+}
+
+function checkDiagonal() {
+
 }
 
 
