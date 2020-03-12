@@ -1,0 +1,38 @@
+td{
+  height: 80px;
+  width: 70px;
+  text-align: center;
+  /*padding: 100px;*/
+  border: 3px solid black;
+  font-size: 120px;
+  border-radius:100px;
+  min-width: 80px;
+  /* -moz-border-radius:2px; */
+}
+
+table {
+    border-collapse:separate;
+    table-layout: fixed;
+    /* min-width: 70px; */
+    /* border:solid black 1px; */
+    /* border-radius:6px; */
+    /* -moz-border-radius:6px; */
+}
+
+
+
+button{
+  margin: auto;
+}
+
+.make_blue {
+  background: blue;
+}
+
+.make_red {
+  background: red;
+}
+
+.make_grey {
+  background: grey;
+}
